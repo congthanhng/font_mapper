@@ -5,6 +5,12 @@ homepage: https://github.com/congthanhng/font_mapper
 repository: https://github.com/congthanhng/font_mapper
 funding:
   - https://www.buymeacoffee.com/congthanhng
+topics:
+  - fonts
+  - pubspec
+  - cli
+  - mapper
+  - font
 
 version: 1.0.0
 
