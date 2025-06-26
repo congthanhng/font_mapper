@@ -2,10 +2,26 @@ import 'package:args/args.dart';
 import 'package:font_mapper/font_mapper.dart';
 
 void main(List<String> arguments) {
-  final parser = ArgParser()
-    ..addOption('target', abbr: 't', help: 'Path to the pubspec.yaml file.', defaultsTo: 'pubspec.yaml')
-    ..addOption('dir', abbr: 'd', help: 'Path to the font directory.', defaultsTo: 'assets/fonts')
-    ..addFlag('help', abbr: 'h', negatable: false, help: 'Show usage information.');
+  final parser =
+      ArgParser()
+        ..addOption(
+          'target',
+          abbr: 't',
+          help: 'Path to the pubspec.yaml file.',
+          defaultsTo: 'pubspec.yaml',
+        )
+        ..addOption(
+          'dir',
+          abbr: 'd',
+          help: 'Path to the font directory.',
+          defaultsTo: 'assets/fonts',
+        )
+        ..addFlag(
+          'help',
+          abbr: 'h',
+          negatable: false,
+          help: 'Show usage information.',
+        );
 
   final ArgResults args = parser.parse(arguments);
 

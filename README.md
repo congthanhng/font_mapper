@@ -64,7 +64,15 @@ flutter:
           weight: 300
 ```
 ## 🔐 License
-MIT License. See LICENSE.
+MIT License. See [LICENSE](https://github.com/congthanhng/font_mapper/blob/main/LICENSE).
 
 ## 🧑‍💻 Contributing
-Feel free to open PRs or issues on GitHub!
+Feel free to open PRs or issues on [GitHub](https://github.com/congthanhng/font_mapper)!
+
+## Sponsoring
+
+<a href="https://www.buymeacoffee.com/congthanhng" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
+
+OR
+
+![7ezgif-5-20a8a8001a](https://user-images.githubusercontent.com/15138747/207929534-6ca20aea-62ae-405a-81a4-0f0139f69467.png)

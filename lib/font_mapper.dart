@@ -3,7 +3,10 @@ library font_mapper;
 import 'dart:io';
 
 /// Run the font mapper to update the fonts section in a pubspec.yaml file.
-void runFontMapper({String targetPath = 'pubspec.yaml', String fontsDirPath = 'assets/fonts'}) {
+void runFontMapper({
+  String targetPath = 'pubspec.yaml',
+  String fontsDirPath = 'assets/fonts',
+}) {
   final fontsDir = Directory(fontsDirPath);
   if (!fontsDir.existsSync()) {
     print('❌ Font directory not found: $fontsDirPath');
@@ -30,8 +33,11 @@ void runFontMapper({String targetPath = 'pubspec.yaml', String fontsDirPath = 'a
 
   // Scan font files
   for (var file in fontsDir.listSync(recursive: true)) {
-    if (file is File && (file.path.endsWith('.ttf') || file.path.endsWith('.otf'))) {
-      final filename = file.uri.pathSegments.last.replaceAll('.ttf', '').replaceAll('.otf', '');
+    if (file is File &&
+        (file.path.endsWith('.ttf') || file.path.endsWith('.otf'))) {
+      final filename = file.uri.pathSegments.last
+          .replaceAll('.ttf', '')
+          .replaceAll('.otf', '');
       final parts = filename.split('-');
       if (parts.length < 2) continue;
 
@@ -62,8 +68,10 @@ void runFontMapper({String targetPath = 'pubspec.yaml', String fontsDirPath = 'a
     fontBlock.writeln('      fonts:');
     for (var font in family.value) {
       fontBlock.write('        - asset: ${font['asset']}');
-      if (font['weight'] != null) fontBlock.write('\n          weight: ${font['weight']}');
-      if (font['style'] == 'italic') fontBlock.write('\n          style: italic');
+      if (font['weight'] != null)
+        fontBlock.write('\n          weight: ${font['weight']}');
+      if (font['style'] == 'italic')
+        fontBlock.write('\n          style: italic');
       fontBlock.writeln();
     }
   }
@@ -97,13 +105,15 @@ void runFontMapper({String targetPath = 'pubspec.yaml', String fontsDirPath = 'a
       final currentIndent = line.length - line.trimLeft().length;
 
       // Detect existing fonts: line
-      if (line.trimLeft().startsWith('fonts:') && currentIndent > flutterIndent) {
+      if (line.trimLeft().startsWith('fonts:') &&
+          currentIndent > flutterIndent) {
         inFonts = true;
         continue;
       }
 
       // End of old fonts block
-      if (inFonts && (line.trim().isEmpty || currentIndent <= flutterIndent + 1)) {
+      if (inFonts &&
+          (line.trim().isEmpty || currentIndent <= flutterIndent + 1)) {
         output.write(fontBlock.toString());
         inFonts = false;
       }
