@@ -1,10 +1,15 @@
 name: font_mapper
-description: A sample command-line application with basic argument parsing.
-version: 0.0.1
-# repository: https://github.com/my_org/my_repo
+description: >-
+  A Dart CLI tool that automatically scans font assets and updates the `fonts:` section in your pubspec.yaml file.
+homepage: https://github.com/congthanhng/font_mapper
+repository: https://github.com/congthanhng/font_mapper
+funding:
+  - https://www.buymeacoffee.com/congthanhng
+
+version: 1.0.0
 
 environment:
-  sdk: ^3.7.2
+  sdk: '>=2.18.0 <4.0.0'
 
 # Add regular dependencies here.
 dependencies:
